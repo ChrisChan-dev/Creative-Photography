@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nature Art Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cursor"></div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoomed view">
+    </div>
+
+    <div id="main-wrapper">
+        <section id="home" class="scene">
+            <div class="content">
+                <h1 class="reveal-text">Capturing Aesthetic Content Through Photography</h1>
+                <p class="fade-in-delayed">Applying Photography Principles in Nature</p>
+                <button class="nav-btn" onclick="goToScene(1)">Begin the Experience ↓</button>
+            </div>
+            <div class="bg-nature"></div>
+        </section>
+
+        <section id="featured" class="scene">
+            <button class="back-btn" onclick="goToScene(0)">↑ Back</button>
+            <div class="content wide">
+                <h2 class="reveal-text">📸 Nature Gallery</h2>
+                <div class="gallery-wrapper">
+                    <div class="scroll-indicator">Scroll gallery content ↓</div>
+                    <div class="gallery-container">
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo1.jpg" alt="Theme"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="photo2.jpg" alt="Theme"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="photo3.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo4.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo5.jpg" alt="Theme"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="photo6.jpg" alt="Theme"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="photo7.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo8.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo10.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo11.jpg" alt="Theme"></div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="photo12.jpg" alt="Theme"></div>
+                    </div>
+                </div>
+                <div class="caption fade-in">
+                    <h3>A Natural Collection</h3>
+                    <p>By Group 6</p>
+                </div>
+                <button class="nav-btn" onclick="goToScene(2)">View the Story ↓</button>
+            </div>
+        </section>
+
+        <section id="story" class="scene">
+            <button class="back-btn" onclick="goToScene(1)">↑ Back</button>
+            <div class="content narrow">
+                <h2 class="reveal-text">📝 Story Behind the Image</h2>
+                <div class="story-text">
+                    <p class="line">Test Test Test Test Test Test Test Test Test Test Test </p>
+                    <p class="line">Test Test Test Test Test Test Test Test Test </p>
+                    <p class="line">Test Test Test Test Test Test Test Test Test Test Test Test Test </p>
+                </div>
+                <button class="nav-btn" onclick="goToScene(3)">Explore the Principles ↓</button>
+            </div>
+        </section>
+
+        <section id="principles" class="scene">
+            <button class="back-btn" onclick="goToScene(2)">↑ Back</button>
+            <div class="content">
+                <h2 class="reveal-text">🎯 Photography Principles Used</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Composition</h3>
+                        <p class="detail-text">The rule of thirds was applied by placing the main visual elements off-center to create balance.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Lighting</h3>
+                        <p class="detail-text">Natural light from the window was used to create soft shadows and a calm mood.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Focus & Depth of Field</h3>
+                        <p class="detail-text">The main subject is in sharp focus while the background remains simple to avoid distractions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Color & Contrast</h3>
+                        <p class="detail-text">Subtle contrast between light and shadow enhances the image’s depth and visual interest.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Post-Processing</h3>
+                        <p class="detail-text">Brightness and contrast were slightly adjusted to maintain a natural and clean look.</p>
+                    </div>
+                </div>
+                <button class="nav-btn" onclick="goToScene(4)">About the Creators ↓</button>
+            </div>
+        </section>
+
+        <section id="creators" class="scene">
+            <button class="back-btn" onclick="goToScene(3)">↑ Back</button>
+            <div class="content">
+                <div class="final-reveal">
+                    <h2 class="section-title">The Creative Team</h2>
+                    <div class="team-grid">
+                        <p class="member">PAMATMAT, ANTONIA CASSANDRA ZAPANTA</p>
+                        <p class="member">GUMAYAGAY, JOHN MARK VILLEGAS</p>
+                        <p class="member">LOLOS, JOHN CHRISTIAN BARCELO</p>
+                        <p class="member">PACHECO, GWYNETH TUSI</p>
+                        <p class="member">GERALDO, JYSLER CHING</p>
+                    </div>
+                    <div class="class-info">
+                        <p>COM251 | Art Appreciation</p>
+                        <p>Instructor: Vladimir B. Villejo</p>
+                    </div>
+                    <button class="nav-btn" onclick="goToScene(0)">Return to Start ↺</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
