@@ -10,8 +10,17 @@
 
     <div class="cursor"></div>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Zoomed view">
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <div class="lightbox-left">
+                <img id="lightbox-img" src="" alt="Zoomed view">
+            </div>
+            <div class="lightbox-right">
+                <h3 id="lightbox-title">Photo Title</h3>
+                <p id="lightbox-desc">Detailed explanation goes here...</p>
+                <button class="close-btn" onclick="closeLightbox(event)">Close ×</button>
+            </div>
+        </div>
     </div>
 
     <div id="main-wrapper">
@@ -36,19 +45,36 @@
                 <div class="gallery-wrapper">
                     <div class="scroll-indicator">Scroll gallery content ↓</div>
                     <div class="gallery-container">
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/waterfall.jpeg" alt="Waterfalls"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/bell_church_front.jpeg" alt="Bell Church Front"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/baguio_hills.jpeg" alt="Baguio Cityscape"></div>
-                        
-                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="img/sunflowers.jpeg" alt="Sunflowers"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/pagoda_tower.jpeg" alt="Pagoda Tower"></div>
-                        
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/bridge_pathway.jpeg" alt="Bridge Pathway"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/garden_steps.jpeg" alt="Garden Steps"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/railway_tree.jpeg" alt="Railway Tree View"></div>
-                        
-                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="img/koi_pond.jpeg" alt="Koi Pond Garden"></div>
-                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/park_walkway.jpeg" alt="Park Walkway"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/waterfall.jpeg" alt="Sacred Descent" data-description="This waterfall captures the ethereal power of Baguio's hidden springs. The vertical composition emphasizes the rhythmic flow of water against jagged stone.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/bell_church_front.jpeg" alt="The Bell Church Gate" data-description="A striking example of traditional architectural design. The vibrant reds and teals signify a cultural anchor within the green mountain landscape.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/baguio_hills.jpeg" alt="Baguio Mosaic" data-description="An elevated perspective of the city's unique tapestry. The sprawling houses integrated into the hills demonstrate the intersection of human expansion and topography.">
+                        </div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)">
+                            <img src="img/sunflowers.jpeg" alt="Solar Radiance" data-description="This field of sunflowers utilizes a wide landscape view to emphasize the repetition of color and form, capturing the energy of a mountain summer.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/pagoda_tower.jpeg" alt="Celestial Reach" data-description="The multi-tiered pagoda stands as a symbol of spiritual height. The intricate rooflines create a silhouette against the misty Baguio sky.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/bridge_pathway.jpeg" alt="The Crossing" data-description="Leading lines in the stone walkway invite the viewer into the frame, symbolizing a transition between the urban world and the sacred garden.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/garden_steps.jpeg" alt="Steps to Stillness" data-description="Moss-covered textures and stone steps focus on the element of Value—the interplay between shadowed crevices and sun-kissed surfaces.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/railway_tree.jpeg" alt="The Old Track" data-description="A poignant contrast between industrial iron wheels and the organic growth of a tree, reflecting the passage of time and nature's resilience.">
+                        </div>
+                        <div class="photo-item landscape" onclick="openLightbox(this)">
+                            <img src="img/koi_pond.jpeg" alt="Tranquil Waters" data-description="A landscape composition focusing on Balance. The still pond reflects the sky and garden, doubling the aesthetic space of the scene.">
+                        </div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)">
+                            <img src="img/park_walkway.jpeg" alt="Palm Sentinel" data-description="Tall, slender palms create a sense of vertical Rhythm. The walkway draws the eye toward the horizon, emphasizing the vastness of the park space.">
+                        </div>
                     </div>
                 </div>
                 <div class="caption fade-in">

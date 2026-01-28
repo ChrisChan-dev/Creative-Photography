@@ -63,49 +63,17 @@ body {
     transform: translateY(0);
 }
 
-.wide {
-    max-width: 1100px;
-}
+.wide { max-width: 1100px; }
+.narrow { max-width: 700px; line-height: 1.8; margin: 0 auto; }
 
-.narrow {
-    max-width: 700px;
-    line-height: 1.8;
-    margin: 0 auto;
-}
+h1 { font-size: 2.2rem; color: var(--accent); margin-bottom: 20px; padding: 0 20px; }
 
-h1 {
-    font-size: 2.2rem;
-    color: var(--accent);
-    margin-bottom: 20px;
-    padding: 0 20px;
-}
+.title-icon { width: 32px; height: 32px; vertical-align: middle; margin-right: 10px; color: var(--accent); }
 
-.title-icon {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    margin-right: 10px;
-    color: var(--accent);
-}
+.gallery-wrapper { position: relative; margin: 10px auto; }
+.scroll-indicator { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 5px; animation: bounce 2s infinite; }
 
-.gallery-wrapper {
-    position: relative;
-    margin: 10px auto;
-}
-
-.scroll-indicator {
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    margin-bottom: 5px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
 .gallery-container {
     display: flex;
@@ -139,28 +107,10 @@ h1 {
     display: block;
 }
 
-.landscape {
-    width: 300px;
-    height: 280px;
-}
+.landscape { width: 300px; height: 280px; }
+.portrait { width: 180px; height: 250px; }
 
-.portrait {
-    width: 180px;
-    height: 250px;
-}
-
-@media (max-width: 768px) {
-    .landscape {
-        width: 100%;
-        height: 200px;
-    }
-
-    .portrait {
-        width: 48%;
-        height: 240px;
-    }
-}
-
+/* --- TWO COLUMN LIGHTBOX --- */
 .lightbox {
     position: fixed;
     top: 0;
@@ -174,12 +124,58 @@ h1 {
     z-index: 2000;
 }
 
-.lightbox img {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+.lightbox-content {
+    display: flex;
+    width: 85%;
+    max-width: 1100px;
+    height: 80vh;
+    background: white;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: zoomIn 0.4s ease-out;
 }
+
+.lightbox-left {
+    flex: 2;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox-left img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.lightbox-right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    border-left: 1px solid #eee;
+}
+
+#lightbox-title { color: var(--accent); font-size: 1.5rem; margin-bottom: 20px; }
+#lightbox-desc { font-size: 0.95rem; line-height: 1.6; color: #555; }
+
+.close-btn {
+    margin-top: 30px;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+}
+
+@keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
 .grid {
     display: flex;
@@ -232,7 +228,7 @@ h1 {
     padding: 5px;
 }
 
-.nav-btn, 
+.nav-btn,
 .back-btn {
     background: none;
     border: none;
@@ -274,7 +270,20 @@ h1 {
     mix-blend-mode: multiply;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .lightbox-content {
+        flex-direction: column;
+        width: 95%;
+        height: 95vh;
+        overflow-y: auto;
+    }
+
+    .lightbox-right {
+        padding: 20px;
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
@@ -291,10 +300,5 @@ h1 {
     .portrait {
         width: 48%;
         height: 240px;
-    }
-
-    .title-icon {
-        width: 24px;
-        height: 24px;
     }
 }

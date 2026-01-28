@@ -15,9 +15,7 @@ function goToScene(index) {
         if (i === index) {
             setTimeout(() => {
                 content.classList.add('active');
-                if (scene.id === 'story') {
-                    animateStoryLines(scene);
-                }
+                if (scene.id === 'story') { animateStoryLines(scene); }
             }, 500);
         } else {
             content.classList.remove('active');
@@ -38,11 +36,19 @@ function animateStoryLines(scene) {
 function openLightbox(element) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = element.querySelector('img').src;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    
+    const imgObj = element.querySelector('img');
+    
+    lightboxImg.src = imgObj.src;
+    lightboxTitle.innerText = imgObj.alt;
+    lightboxDesc.innerText = imgObj.getAttribute('data-description');
+    
     lightbox.style.display = 'flex';
 }
 
-function closeLightbox() {
+function closeLightbox(event) {
     document.getElementById('lightbox').style.display = 'none';
 }
 
