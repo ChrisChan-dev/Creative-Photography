@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nature Art Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cursor"></div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoomed view">
+    </div>
+
+    <div id="main-wrapper">
+        <section id="home" class="scene">
+            <div class="content">
+                <h1 class="reveal-text">Capturing Aesthetic Content Through Photography</h1>
+                <p class="fade-in-delayed">A Journey Through the High Lands and Sacred Spaces</p>
+                <button class="nav-btn" onclick="goToScene(1)">Begin the Experience ↓</button>
+            </div>
+            <div class="bg-nature"></div>
+        </section>
+
+        <section id="featured" class="scene">
+            <button class="back-btn" onclick="goToScene(0)">↑ Back</button>
+            <div class="content wide">
+                <h2 class="reveal-text">
+                    <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+                    </svg>
+                    Nature Gallery
+                </h2>
+                <div class="gallery-wrapper">
+                    <div class="scroll-indicator">Scroll gallery content ↓</div>
+                    <div class="gallery-container">
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/waterfall.jpeg" alt="Waterfalls"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/bell_church_front.jpeg" alt="Bell Church Front"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/baguio_hills.jpeg" alt="Baguio Cityscape"></div>
+                        
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="img/sunflowers.jpeg" alt="Sunflowers"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/pagoda_tower.jpeg" alt="Pagoda Tower"></div>
+                        
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/bridge_pathway.jpeg" alt="Bridge Pathway"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/garden_steps.jpeg" alt="Garden Steps"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/railway_tree.jpeg" alt="Railway Tree View"></div>
+                        
+                        <div class="photo-item landscape" onclick="openLightbox(this)"><img src="img/koi_pond.jpeg" alt="Koi Pond Garden"></div>
+                        <div class="photo-item portrait" onclick="openLightbox(this)"><img src="img/park_walkway.jpeg" alt="Park Walkway"></div>
+                    </div>
+                </div>
+                <div class="caption fade-in">
+                    <h3>A Natural Collection</h3>
+                    <p>By Group 6</p>
+                </div>
+                <button class="nav-btn" onclick="goToScene(2)">View the Story ↓</button>
+            </div>
+        </section>
+
+        <section id="story" class="scene">
+            <button class="back-btn" onclick="goToScene(1)">↑ Back</button>
+            <div class="content narrow">
+                <h2 class="reveal-text">
+                    <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                    Story Behind the Image
+                </h2>
+                <div class="story-text">
+                    <p class="line">This collection is a visual narrative of our journey through the mist-covered hills of Baguio and its sacred landmarks.</p>
+                    <p class="line">From the rhythmic descent of hidden waterfalls to the colorful architectural heritage of the Bell Church, we captured the harmony between man-made spirituality and raw nature.</p>
+                    <p class="line">Each frame represents a moment of stillness, inviting the viewer to appreciate the delicate balance of life in the mountains.</p>
+                </div>
+                <button class="nav-btn" onclick="goToScene(3)">Explore the Principles ↓</button>
+            </div>
+        </section>
+
+        <section id="principles" class="scene">
+            <button class="back-btn" onclick="goToScene(2)">↑ Back</button>
+            <div class="content">
+                <h2 class="reveal-text">
+                    <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    Photography Principles Used
+                </h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Composition</h3>
+                        <p class="detail-text">Utilized leading lines through stone pathways and bridges to guide the eye toward architectural focal points like the pagoda and altar.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Lighting</h3>
+                        <p class="detail-text">Harnessing soft, diffused mountain light to capture the vibrant greens of the bamboo and the intricate details of temple rooftops under overcast skies.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Focus & Depth of Field</h3>
+                        <p class="detail-text">Selective focus was applied to the blooming sunflowers and lotus ponds, allowing busy city backgrounds to melt into a soft, secondary layer.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Color & Contrast</h3>
+                        <p class="detail-text">Juxtaposing the bright reds and teals of the sacred architecture against the deep, organic greens of the Baguio pine forests.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Post-Processing</h3>
+                        <p class="detail-text">Enhanced clarity to emphasize the texture of the stone steps and the ethereal mist surrounding the multi-tiered waterfalls.</p>
+                    </div>
+                </div>
+                <button class="nav-btn" onclick="goToScene(4)">About the Creators ↓</button>
+            </div>
+        </section>
+
+        <section id="creators" class="scene">
+            <button class="back-btn" onclick="goToScene(3)">↑ Back</button>
+            <div class="content">
+                <div class="final-reveal">
+                    <h2 class="section-title">The Creative Team</h2>
+                    <div class="team-grid">
+                        <p class="member">PAMATMAT, ANTONIA CASSANDRA ZAPANTA</p>
+                        <p class="member">GUMAYAGAY, JOHN MARK VILLEGAS</p>
+                        <p class="member">LOLOS, JOHN CHRISTIAN BARCELO</p>
+                        <p class="member">PACHECO, GWYNETH TUSI</p>
+                        <p class="member">GERALDO, JYSLER CHING</p>
+                    </div>
+                    <div class="class-info">
+                        <p>COM251 | Art Appreciation</p>
+                        <p>Instructor: Vladimir B. Villejo</p>
+                    </div>
+                    <button class="nav-btn" onclick="goToScene(0)">Return to Start ↺</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
