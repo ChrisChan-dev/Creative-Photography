@@ -3,6 +3,17 @@ const scenes = document.querySelectorAll('.scene');
 const cursor = document.querySelector('.cursor');
 const isMobile = window.matchMedia("(pointer: coarse)").matches;
 
+const scrollSound = new Audio('book_flip1.wav'); 
+const zoomSound = new Audio('book_flip2.wav');   
+const hoverSound = new Audio('book_flip3.wav');  
+
+function playSfx(audio) {
+    audio.currentTime = 0;
+    audio.play().catch(err => {
+        console.warn("Audio playback delayed until user interaction.");
+    });
+}
+
 let currentScene = 0;
 
 function goToScene(index) {
@@ -10,12 +21,18 @@ function goToScene(index) {
     const yOffset = index * 100;
     wrapper.style.transform = `translateY(-${yOffset}vh)`;
     
+    setTimeout(() => {
+        playSfx(scrollSound);
+    }, 1000);
+
     scenes.forEach((scene, i) => {
         const content = scene.querySelector('.content');
         if (i === index) {
             setTimeout(() => {
                 content.classList.add('active');
-                if (scene.id === 'story') { animateStoryLines(scene); }
+                if (scene.id === 'story') { 
+                    animateStoryLines(scene); 
+                }
             }, 500);
         } else {
             content.classList.remove('active');
@@ -34,6 +51,7 @@ function animateStoryLines(scene) {
 }
 
 function openLightbox(element) {
+    playSfx(zoomSound);
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxTitle = document.getElementById('lightbox-title');
@@ -50,7 +68,19 @@ function openLightbox(element) {
 
 function closeLightbox(event) {
     document.getElementById('lightbox').style.display = 'none';
+
+    setTimeout(() => {
+        playSfx(scrollSound);
+    }, 10);
 }
+
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        if (!isMobile) {
+            playSfx(hoverSound);
+        }
+    });
+});
 
 if (!isMobile && cursor) {
     document.addEventListener('mousemove', (e) => {
